@@ -9,7 +9,7 @@ Place the file `reviewer.sty` in your working directory.
 
 Copy your old manuscript `original.tex` into `revised.tex`.
 
-Add the **reviewer** package and starts answering the comments as in this example:
+Edit `revised.tex` to add the **reviewer** package and to answer the comments, as in this example:
 
 ```latex
 \documentclass{article}
@@ -75,7 +75,7 @@ pdflatex diff.tex # cross-links need two compilations
 
                                                      Page 1 of `diff.pdf                                                                          |                                                          Page 2                                                                                     
 :------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:
-<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="400px" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="400px" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="390px" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="390px" ></a>
 
 ---
 
