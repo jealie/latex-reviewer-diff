@@ -63,7 +63,7 @@ whole content of human reason, as is proven in the ontological manuals.
 \end{document}
 ```
 
-You can already compile (twice) this new document, but this package really shines when used in conjunction with **latexdiff**:
+You can already compile (twice) this new document, but this package really shines when used in conjunction with [**latexdiff**](https://www.ctan.org/pkg/latexdiff?lang=en):
 
 ```bash
 latexdiff original.tex revised.tex > diff.tex
@@ -71,9 +71,29 @@ pdflatex diff.tex
 pdflatex diff.tex # cross-links need two compilations
 ```
 
-The result will look like this:
+`diff.pdf` will look like this:
 
-<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="300" ></a>
-<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="300" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="400" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="400" ></a>
+
+(see also)
 
 
+## Common problems
+
+Many errors arise when you copy reviewer's text that contains latex special characters. For example:
+
+  * Replace `_` by `` \char`_ ``
+
+  * Put `<` or `>` into `$` signs: `$<$`
+
+The `\reviewlabel{...}` command doesn't work inside a `\caption{...}`, but it works if you place it just outside:
+
+
+```latex
+\begin{figure}
+\includegraphics{...}
+\reviewlabel{whatever}
+\caption{Some caption}
+\end{figure}
+```
