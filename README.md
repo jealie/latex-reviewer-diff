@@ -76,6 +76,8 @@ pdflatex diff.tex # cross-links need two compilations
 <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="400" ></a>
 <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="400" ></a>
 
+---
+
 (see also the examples [there](https://github.com/jealie/latex-reviewer-diff/tree/master/examples))
 
 ## Advanced usage
