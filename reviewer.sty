@@ -74,18 +74,25 @@
 \label{#2}}
 \makeatother 
 
+\RequirePackage{marginnote}
 \RequirePackage{framed}
-\RequirePackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
-\newcommand{\td}{\todo[inline,size=\large]{TODO}}
-\newcommand{\rem}[1]{\todo[inline,backgroundcolor=blue!25,bordercolor=blue,size=\normalsize]{Remark: #1}}
-\newcommand{\reviewlabel}[1]{ \setkey{key#1}\addtext{\getkey{key#1}}{k#1}\label{lr:#1}\raisebox{\ht\strutbox}{\hypertarget{r:#1}{}}\todo[noline,size=\large,backgroundcolor=red!25,bordercolor=red,noprepend,caption={}]{%
-    {\color{black}%
-      \begin{center}%
+\RequirePackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\usepackage[many]{tcolorbox}
+\newtcolorbox{story}{
+  width=2cm,
+  fonttitle=\bfseries,
+  colframe=Melon,
+  colback=Melon!10}
+
+\newcommand{\reviewlabel}[1]{ \setkey{key#1}\addtext{\getkey{key#1}}{k#1}\label{lr:#1}\raisebox{\ht\strutbox}{\hypertarget{r:#1}{}}%
+\marginnote{%
+\begin{story}%
+\centering%
         \hyperlink{l:#1}{\getkey{key#1}%
         \ $\uparrow$}%
-        \vspace{0.8cm}%
-      \end{center}%
-}}}
+\end{story}%
+}}
 \newcommand{\reviewref}[1]{\raisebox{\ht\strutbox}{\hypertarget{l:#1}{}}\hyperlink{r:#1}{mark \getrefnumber{k#1} on page \getpagerefnumber{lr:#1}}}
 \newenvironment{question}{\sffamily}{\par}
 \newenvironment{response}{\begin{itshape}\begin{leftbar}}{\end{leftbar}\end{itshape}}
@@ -106,4 +113,3 @@
 \fi
 
 \endinput
-
