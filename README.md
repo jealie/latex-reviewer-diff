@@ -76,8 +76,17 @@ pdflatex diff.tex # cross-links need two compilations
 <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="400" ></a>
 <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="400" ></a>
 
-(see also)
+(see also the examples [there](https://github.com/jealie/latex-reviewer-diff/tree/master/examples))
 
+## Advanced usage
+
+It is possible to use the option `hide` when loading the package, to generate a final manuscript without the comments:
+
+```latex
+\usepackage[hide]{reviewer}
+```
+
+The use of the `DIFnomarkup` environment is not mandatory, but it is solves some rarely occurring issues with **latexdiff**.
 
 ## Common problems
 
@@ -97,3 +106,5 @@ The `\reviewlabel{...}` command doesn't work inside a `\caption{...}`, but it wo
 \caption{Some caption}
 \end{figure}
 ```
+
+Bug reports and pull requests are welcome!
