@@ -79,7 +79,7 @@ pdflatex diff.tex # cross-links need two compilations
 
 ---
 
-(see also the examples [there](https://github.com/jealie/latex-reviewer-diff/tree/master/examples))
+See the full example [there](https://github.com/jealie/latex-reviewer-diff/tree/master/examples).
 
 ## Advanced usage
 
@@ -98,6 +98,8 @@ Many errors arise when you copy reviewer's text that contains latex special char
   * Replace `_` by `` \char`_ ``
 
   * Put `<` or `>` into `$` signs: `$<$`
+
+  * Escape `#` with `\#`
 
 The `\reviewlabel{...}` command doesn't work inside a `\caption{...}`, but it works if you place it just outside:
 
