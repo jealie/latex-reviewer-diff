@@ -73,8 +73,8 @@ pdflatex diff.tex # cross-links need two compilations
 
 `diff.pdf` will look like this:
 
-<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="400" ></a>
-<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="400" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="50%" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="50%" ></a>
 
 ---
 
