@@ -53,6 +53,7 @@ We respectfully disagree with the reviewer's assessment of our work. Nonetheless
 
 % [...]
 
+%% Tag changes with \reviewlabel:
 \reviewlabel{explaindetails}The noumena have nothing to do with, thus, the Antinomies. What we
 have alone been able to show is that the things in themselves constitute the
 whole content of human reason, as is proven in the ontological manuals.
@@ -72,7 +73,7 @@ pdflatex diff.tex # cross-links need two compilations
 
 The result will look like this:
 
-![Example (page 1)](https://raw.github.com/jealie/latex-reviewer-diff/blob/master/examples/diff_1.png)
-![Example (page 2)](https://raw.github.com/jealie/latex-reviewer-diff/blob/master/examples/diff_2.png)
+<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="300" ></a>
+<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="300" ></a>
 
 
