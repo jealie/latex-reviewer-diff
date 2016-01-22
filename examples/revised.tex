@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{reviewer} % loads the reviewer package
+
+\usepackage{kantlipsum} % for blind text
+\title{Genius paper that nobody understood}
+
+\begin{document}
+
+\begin{DIFnomarkup}
+
+Dear Dr House,
+
+We attach below the manuscript with our responses. The changes to the original manuscript are indicated by hyperlinked, numbered marks in the right-hand margin of the revised manuscript document below. Additions to the text are underlined in blue; deletions are indicated with red strike-through marks.
+
+Sincerely, the authors
+
+\startreview
+\vspace{3cm}
+REVIEWER \#1:
+
+Can you explain this part a bit further, but without going into detail.
+
+\us
+
+We followed this reviewer's advice and updated the manuscript.
+See changes at \reviewref{explaindetails}.
+
+\them
+
+\vspace{3cm}
+REVIEWER \#2:
+
+Not sure how to say this diplomatically, but the manuscript is really dull.
+
+\us
+
+We respectfully disagree with the reviewer's assessment of our work.
+Nonetheless we updated the conclusion to make it look more interesting (\reviewref{a_paragraph}).
+
+\stopreview\end{DIFnomarkup}
+
+\maketitle
+
+\kant[1]
+
+\reviewlabel{explaindetails}The noumena have nothing to do with, thus, the Antinomies. What we
+have alone been able to show is that the things in themselves constitute the
+whole content of human reason, as is proven in the ontological manuals.
+
+\kant[2]
+
+\reviewlabel{a_paragraph}What we have alone been able to show is that our a posteriori concepts (and
+it is obvious that this is the case) are what first give rise to the transcendental
+unity of apperception. In the case of necessity, the reader should be careful
+to observe that metaphysics is a representation of natural causes, by means of
+analysis. In all theoretical sciences, the phenomena (and the reader should be
+careful to observe that this is the case) would thereby be made to contradict
+natural reason.
+
+\end{document}
