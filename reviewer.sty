@@ -1,0 +1,109 @@
+%%
+%% Copyright (C) 2016 by J Lienard
+%%
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3 of this license or (at your option) any later
+%% version.  The latest version of this license is in:
+%%
+%%    http://www.latex-project.org/lppl.txt
+%%
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
+%%
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{reviewer}[2016/01/22 Package to simplify response to reviewers]
+
+
+%% Global visibility option
+\newif\if@hide\@hidefalse
+\DeclareOption{hide}{
+  \@hidetrue
+}
+
+\ProcessOptions\relax
+
+\newenvironment{DIFnomarkup}{%
+  \renewcommand{\thepage}{\roman{page}}% Roman numerals for page counter
+}{%
+  \renewcommand{\thepage}{\arabic{page}}% Arabic numerals for page counter
+}
+
+\if@hide
+%% Hide the reviews and our responses:
+\RequirePackage{comment}
+\excludecomment{DIFnomarkup}
+\newenvironment{response}{}{}
+\newenvironment{question}{}{}
+\newcommand{\reviewref}[1]{}
+\newcommand{\reviewlabel}[1]{}
+\newcommand{\startreview}{}
+\newcommand{\stopreview}{}
+\newcommand{\us}{}
+\newcommand{\them}{}
+
+\else
+%% Show the reviews and their responses:
+\RequirePackage[pageanchor]{hyperref}
+\RequirePackage{etoolbox,refcount}
+\RequirePackage{framed}
+
+\newcounter{key}
+\setcounter{key}{0}
+
+\makeatletter
+\let\orig@Hy@EveryPageAnchor\Hy@EveryPageAnchor
+\def\Hy@EveryPageAnchor{%
+  \begingroup
+  \hypersetup{pdfview=Fit}%
+  \orig@Hy@EveryPageAnchor
+  \endgroup
+}
+\def\setkey#1{\addtocounter{key}{1}\expandafter\def\csname MY@#1\endcsname{\arabic{key}}}
+\def\getkey#1{\csname MY@#1\endcsname}
+\makeatother
+
+\newcounter{cnt}
+\AtEndDocument{\refstepcounter{cnt}\label{lastcnt}}
+
+\makeatletter
+\newcommand\addtext[2]{%
+  \stepcounter{cnt}%
+  \def\@currentlabel{#1}%
+\label{#2}}
+\makeatother 
+
+\RequirePackage{framed}
+\RequirePackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommand{\td}{\todo[inline,size=\large]{TODO}}
+\newcommand{\rem}[1]{\todo[inline,backgroundcolor=blue!25,bordercolor=blue,size=\normalsize]{Remark: #1}}
+\newcommand{\reviewlabel}[1]{ \setkey{key#1}\addtext{\getkey{key#1}}{k#1}\label{lr:#1}\raisebox{\ht\strutbox}{\hypertarget{r:#1}{}}\todo[noline,size=\large,backgroundcolor=red!25,bordercolor=red,noprepend,caption={}]{%
+    {\color{black}%
+      \begin{center}%
+        \hyperlink{l:#1}{\getkey{key#1}%
+        \ $\uparrow$}%
+        \vspace{0.8cm}%
+      \end{center}%
+}}}
+\newcommand{\reviewref}[1]{\raisebox{\ht\strutbox}{\hypertarget{l:#1}{}}\hyperlink{r:#1}{mark \getrefnumber{k#1} on page \getpagerefnumber{lr:#1}}}
+\newenvironment{question}{\sffamily}{\par}
+\newenvironment{response}{\begin{itshape}\begin{leftbar}}{\end{leftbar}\end{itshape}}
+
+\newcommand\them{\end{response}\begin{question}}
+\newcommand\us{\end{question}\begin{response}}
+\newcommand\startreview{
+  \begin{question}
+}
+\newcommand\stopreview{\end{response}
+  \newpage
+  \setcounter{page}{1}
+}
+
+%% Increase the margin width, so that we have space for the marks
+%\setlength{\marginparwidth}{2cm}
+
+\fi
+
+\endinput
+
