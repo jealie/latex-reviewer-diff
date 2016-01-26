@@ -11,53 +11,53 @@ Latex package designed to write reviewers response in scientific publications. P
 
 3. Edit `revised.tex` to add the **reviewer** package and answer the comments as in this example (source [here](https://github.com/jealie/latex-reviewer-diff/tree/master/examples)):
 
-```latex
-\documentclass{article}
-
-\usepackage{reviewer} %% loads the reviewer package
-
-\begin{document}
-
-%% Starts the review section like so:
-\begin{DIFnomarkup}
-\startreview 
-
-%% Start copying and pasting the reviewer's comments:
-REVIEWER \#1: Can you explain this part a bit further, but without going into detail.
-
-%% Introduce the response with \us. It can contain hyperlinks within the text with \revieweref
-\us
-We followed this reviewer's advice and updated the manuscript.
-See changes at \reviewref{explaindetails}.
-
-%% Introduce more comments with \them
-\them
-Not sure how to say this diplomatically, but the manuscript is really dull.
-
-\us
-We respectfully disagree with the reviewer's assessment of our work. Nonetheless...
-
-%% Continue ad libitum...
-% [...]
-
-%% Ends the review section:
-\stopreview\end{DIFnomarkup}
-
-%% From now on, this is the manuscript revised to address the comments:
-
-\maketitle
-
-%% [...]
-
-%% Tag changes that you want to refer with \reviewlabel:
-\reviewlabel{explaindetails}The noumena have nothing to do with, thus, the Antinomies. What we
-have alone been able to show is that the things in themselves constitute the
-whole content of human reason, as is proven in the ontological manuals.
-
-%% [...]
-
-\end{document}
-```
+   ```latex
+   \documentclass{article}
+   
+   \usepackage{reviewer} %% loads the reviewer package
+   
+   \begin{document}
+   
+   %% Starts the review section like so:
+   \begin{DIFnomarkup}
+   \startreview 
+   
+   %% Start copying and pasting the reviewer's comments:
+   REVIEWER \#1: Can you explain this part a bit further, but without going into detail.
+   
+   %% Introduce the response with \us. It can contain hyperlinks within the text with \revieweref
+   \us
+   We followed this reviewer's advice and updated the manuscript.
+   See changes at \reviewref{explaindetails}.
+   
+   %% Introduce more comments with \them
+   \them
+   Not sure how to say this diplomatically, but the manuscript is really dull.
+   
+   \us
+   We respectfully disagree with the reviewer's assessment of our work. Nonetheless...
+   
+   %% Continue ad libitum...
+   % [...]
+   
+   %% Ends the review section:
+   \stopreview\end{DIFnomarkup}
+   
+   %% From now on, this is the manuscript revised to address the comments:
+   
+   \maketitle
+   
+   %% [...]
+   
+   %% Tag changes that you want to refer with \reviewlabel:
+   \reviewlabel{explaindetails}The noumena have nothing to do with, thus, the Antinomies. What we
+   have alone been able to show is that the things in themselves constitute the
+   whole content of human reason, as is proven in the ontological manuals.
+   
+   %% [...]
+   
+   \end{document}
+   ```
 
 4. Compile twice the document:
 
