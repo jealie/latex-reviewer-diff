@@ -9,7 +9,7 @@ Latex package designed to write reviewers response in scientific publications. P
 
 2. Copy your old manuscript `original.tex` into `revised.tex`.
 
-3. Edit `revised.tex` to add the **reviewer** package and answer the comments as in this example:
+3. Edit `revised.tex` to add the **reviewer** package and answer the comments as in this example (source [here](https://github.com/jealie/latex-reviewer-diff/tree/master/examples)):
 
 ```latex
 \documentclass{article}
@@ -58,7 +58,6 @@ whole content of human reason, as is proven in the ontological manuals.
 
 \end{document}
 ```
-   (See the full example [here](https://github.com/jealie/latex-reviewer-diff/tree/master/examples))
 
 4. Compile twice the document:
 
