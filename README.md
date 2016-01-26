@@ -61,35 +61,35 @@ Latex package designed to write reviewers response in scientific publications. P
 
 4. Compile twice the document:
 
-```bash
-pdflatex revised.tex
-pdflatex revised.tex # cross-links need two compilations
-```
+   ```bash
+   pdflatex revised.tex
+   pdflatex revised.tex # cross-links need two compilations
+   ```
 
 
 ## Advanced usage
 
 + This package really shines when used in conjunction with [**latexdiff**](https://www.ctan.org/pkg/latexdiff?lang=en):
 
-```bash
-latexdiff original.tex revised.tex > diff.tex
-pdflatex diff.tex
-pdflatex diff.tex # cross-links need two compilations
-```
+  ```bash
+  latexdiff original.tex revised.tex > diff.tex
+  pdflatex diff.tex
+  pdflatex diff.tex # cross-links need two compilations
+  ```
 
   `diff.pdf` will look like this:
 
-                                                     Page 1 of `diff.pdf`                                                                         |                                                          Page 2                                                                                     
-:------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:
-<a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="390px" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="390px" ></a>
-
+                                                       Page 1 of `diff.pdf`                                                                         |                                                          Page 2                                                                                     
+  :------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:
+  <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="390px" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="390px" ></a>
+  
   (**latexdif** is useful to highlight automatically the changes between the old `original.tex` and the new `revised.tex`)
 
 + It is possible to use the option `hide` when loading the package, to generate a final manuscript without the comments:
 
-```latex
-\usepackage[hide]{reviewer}
-```
+  ```latex
+  \usepackage[hide]{reviewer}
+  ```
 
 
 ## Common problems
@@ -104,14 +104,13 @@ pdflatex diff.tex # cross-links need two compilations
 
 + The `\reviewlabel{...}` command doesn't work inside a `\caption{...}`, but it works if you place it just outside:
 
-
-```latex
-\begin{figure}
-\includegraphics{...}
-\reviewlabel{whatever}
-\caption{Some caption}
-\end{figure}
-```
+  ```latex
+  \begin{figure}
+  \includegraphics{...}
+  \reviewlabel{whatever}
+  \caption{Some caption}
+  \end{figure}
+  ```
 
 + The use of the `DIFnomarkup` environment is not mandatory, but it is solves some rarely occurring issues with **latexdiff**.
 
