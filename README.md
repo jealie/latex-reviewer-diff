@@ -79,11 +79,11 @@ Latex package designed to write reviewers response in scientific publications. P
 
   `diff.pdf` will look like this:
 
-                                                       Page 1 of `diff.pdf`                                                                         |                                                          Page 2                                                                                     
+                                                       Page 1 of `diff.pdf`                                                                         |                                                          Page 2 of `diff.pdf`                                                                       
   :------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------:
   <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_1.png" align="left" width="390px" ></a> | <a href="url"><img src="https://raw.githubusercontent.com/jealie/latex-reviewer-diff/master/examples/diff_2.png" align="right" width="390px" ></a>
   
-  (**latexdif** is useful to highlight automatically the changes between the old `original.tex` and the new `revised.tex`)
+  (**latexdiff** is useful to highlight automatically the changes between the old `original.tex` and the new `revised.tex`)
 
 + It is possible to use the option `hide` when loading the package, to generate a final manuscript without the comments:
 
@@ -101,6 +101,8 @@ Latex package designed to write reviewers response in scientific publications. P
   * Put `<` or `>` into `$` signs: `$<$`
 
   * Escape `#` with `\#`
+
+  * Save in UTF-8 and declare its use in the preamble (`\usepackage[utf8]{inputenc}`) to allow these characters: `…`, `’`, `„`, `”`...
 
 + The `\reviewlabel{...}` command doesn't work inside a `\caption{...}`, but it works if you place it just outside:
 
